@@ -1,0 +1,210 @@
+/* Theme CSS - Reusable utilities and dark mode support */
+
+/* Button utilities */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200;
+}
+
+.btn-danger {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200;
+}
+
+.btn-icon {
+  @apply inline-flex items-center justify-center p-2 border border-transparent rounded-lg transition-colors duration-200;
+}
+
+/* Card utilities */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 transition-all duration-200 hover:shadow-md;
+}
+
+.card-header {
+  @apply px-6 py-4 border-b border-gray-200 dark:border-gray-700;
+}
+
+.card-body {
+  @apply px-6 py-4;
+}
+
+/* Form utilities */
+.form-input {
+  @apply block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+}
+
+.form-select {
+  @apply block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+}
+
+.form-textarea {
+  @apply block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
+}
+
+/* Modal utilities */
+.modal-overlay {
+  @apply fixed inset-0 bg-gray-600 bg-opacity-75 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity duration-300;
+}
+
+.modal-content {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-xl max-w-lg w-full mx-4 max-h-screen overflow-y-auto transform transition-all duration-300;
+}
+
+.modal-header {
+  @apply flex justify-between items-center px-6 py-4 border-b border-gray-200 dark:border-gray-700;
+}
+
+.modal-body {
+  @apply px-6 py-4;
+}
+
+.modal-footer {
+  @apply flex justify-end space-x-3 px-6 py-4 border-t border-gray-200 dark:border-gray-700;
+}
+
+/* Status badges */
+.status-badge {
+  @apply inline-flex px-2 py-1 text-xs font-medium rounded-full;
+}
+
+.status-success {
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300;
+}
+
+.status-warning {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300;
+}
+
+.status-info {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300;
+}
+
+.status-error {
+  @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300;
+}
+
+/* Search input */
+.search-input {
+  @apply w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+}
+
+/* Table utilities */
+.table-container {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden;
+}
+
+.table-header {
+  @apply bg-gray-50 dark:bg-gray-700;
+}
+
+.table-row {
+  @apply hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150;
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+  @apply inline-flex items-center justify-center w-10 h-6 bg-gray-200 dark:bg-gray-600 rounded-full relative cursor-pointer transition-colors duration-200;
+}
+
+.dark-mode-toggle::after {
+  @apply content-[''] absolute w-4 h-4 bg-white rounded-full shadow-sm transition-transform duration-200;
+  left: 2px;
+  transform: translateX(0);
+}
+
+.dark .dark-mode-toggle::after {
+  transform: translateX(16px);
+}
+
+/* Responsive utilities */
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Focus visible utilities for accessibility */
+.focus-visible {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700;
+}
+
+.gradient-secondary {
+  @apply bg-gradient-to-r from-teal-600 to-teal-700;
+}
+
+/* Text utilities */
+.text-muted {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.text-heading {
+  @apply text-gray-900 dark:text-gray-100 font-semibold;
+}
+
+.text-body {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+/* Error and success messages */
+.alert {
+  @apply px-4 py-3 rounded-lg border;
+}
+
+.alert-success {
+  @apply bg-green-50 dark:bg-green-900 border-green-200 dark:border-green-700 text-green-700 dark:text-green-300;
+}
+
+.alert-error {
+  @apply bg-red-50 dark:bg-red-900 border-red-200 dark:border-red-700 text-red-700 dark:text-red-300;
+}
+
+.alert-warning {
+  @apply bg-yellow-50 dark:bg-yellow-900 border-yellow-200 dark:border-yellow-700 text-yellow-700 dark:text-yellow-300;
+}
+
+.alert-info {
+  @apply bg-blue-50 dark:bg-blue-900 border-blue-200 dark:border-blue-700 text-blue-700 dark:text-blue-300;
+}
